@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import Counter from './Counter'
 import { createStore } from 'redux'
 import {Provider} from 'react-redux'
+import Router from './utils/Router'
 
 const initialState = {
   counter : 0,
@@ -23,7 +24,7 @@ export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Counter />
+        <Router />
       </Provider>
      
     );
