@@ -1,21 +1,11 @@
 import React, {Component} from 'react'
-import Counter from './Counter'
+//import Counter from './Counter'
+
 import { createStore } from 'redux'
 import {Provider} from 'react-redux'
+
 import Router from './utils/Router'
-
-const initialState = {
-  counter : 0,
-}
-
-const reducer = (state = initialState, action) =>{
-
-  switch(action.type){
-    case 'INCREASE' : return { counter : state.counter+1} 
-    case 'DECREASE' : return { counter : state.counter-1} 
-  }
-  return state
-}
+import {reducer} from './reducers/Reducer'
 
 const store = createStore(reducer);
 
