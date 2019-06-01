@@ -1,13 +1,7 @@
 import React, {Component} from 'react'
-//import Counter from './Counter'
-
-import { createStore } from 'redux'
 import {Provider} from 'react-redux'
-
 import Router from './utils/Router'
-import {reducer} from './reducers/Reducer'
-
-const store = createStore(reducer);
+import {store} from './store/index'
 
 export default class App extends Component {
 
@@ -16,7 +10,6 @@ export default class App extends Component {
       <Provider store={store}>
         <Router />
       </Provider>
-     
     );
   }
 }
