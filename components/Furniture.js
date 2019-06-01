@@ -12,6 +12,7 @@ class Furniture extends Component{
             <View style={commonStyles.container}>
                <FlatList
                 data={furniture}
+                keyExtractor={(item,key) => item.id}
                 renderItem={({item}) => 
                     <Item data={item} onClick={this.props.add} />}
                 />

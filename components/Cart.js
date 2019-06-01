@@ -11,15 +11,12 @@ class Cart extends Component{
             <View style={commonStyles.container}>
                <FlatList
                 data={this.props.cart}
+                keyExtractor={(item,key) => item.id}
                 renderItem={({item}) => 
-                    <Item data={item} onClick={this.props.add} />}
+                    <Item data={item} onClick={this.props.delete} />}
                 />
             </View>
         )
-    }
-
-    onClick=(data)=>{
-        alert(data)
     }
 }
 
@@ -33,7 +30,7 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
     return{
-        add: (product)=> dispatch({ type: 'ADD', payload: product}),
+       // add: (product)=> dispatch({ type: 'ADD', payload: product}),
         delete: (product)=> dispatch({ type: 'DELETE', payload: product}),
     }
 }

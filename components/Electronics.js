@@ -12,6 +12,7 @@ class Electronics extends Component{
             <View style={commonStyles.container}>
                 <FlatList
                 data={electronics}
+                keyExtractor={(item,key) => item.id}
                 renderItem={({item}) => 
                     <Item data={item} onClick={this.props.add} />}
                 />
@@ -21,13 +22,6 @@ class Electronics extends Component{
 }
 
 export default connect(null, mapDispatchToProps)(Electronics)
-
-
-function mapStateToProps(state){
-    return {
-       // cart : state.cart
-    }
-}
 
 function mapDispatchToProps(dispatch){
     return{
